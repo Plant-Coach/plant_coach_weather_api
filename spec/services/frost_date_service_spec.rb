@@ -29,8 +29,8 @@ RSpec.describe FrostDateService do
       expect(data[1]).to have_key(:season_id)
       expect(data[1][:season_id]).to eq("1")
 
-      expect(data[1]).to have_key(:temperature_thresholed)
-      expect(data[1][:temperature_thresholed]).to eq("32")
+      expect(data[1]).to have_key(:temperature_threshold)
+      expect(data[1][:temperature_threshold]).to eq("32")
 
       expect(data[1]).to have_key(:prob_50)
       expect(data[1][:prob_50]).to be_a String
@@ -46,12 +46,11 @@ RSpec.describe FrostDateService do
       expect(data[1]).to have_key(:season_id)
       expect(data[1][:season_id]).to eq("2")
 
-      expect(data[1]).to have_key(:temperature_thresholed)
-      expect(data[1][:temperature_thresholed]).to eq("32")
+      expect(data[1]).to have_key(:temperature_threshold)
+      expect(data[1][:temperature_threshold]).to eq("32")
 
       expect(data[1]).to have_key(:prob_50)
       expect(data[1][:prob_50]).to be_a String
-      require 'pry'; binding.pry
     end
   end
 end
