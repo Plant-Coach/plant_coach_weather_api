@@ -18,4 +18,36 @@ RSpec.describe WeatherService do
       expect(data[0][:EnglishName]).to be_a String
     end
   end
+
+  describe '::get_forecast' do
+    it 'returns the forecast' do
+      data = WeatherService.get_forecast("35054_PC")
+
+      expect(data).to be_a Hash
+
+      expect(data).to have_key(:Headline)
+      expect(data).to be_a Hash
+
+      expect(data[:Headline]).to have_key(:Text)
+      expect(data[:Headline][:Text]).to be_a String
+
+      expect(data).to have_key(:DailyForecasts)
+      expect(data[:DailyForecasts]).to be_an Array
+
+      data[:DailyForecasts].each do |forecast|
+        expect(forecast).to have_key(:Date)
+        expect(forecast).to have_key(:Temperature)
+        expect(forecast).to have_key(:Day)
+        expect(forecast).to have_key(:Night)
+
+        expect(forecast[:Temperature]).to have_key(:Minimum)
+        expect(forecast[:Temperature][:Minimum]).to have_key(:Value)
+        expect(forecast[:Temperature][:Minimum][:Value]).to be_a Float
+
+        expect(forecast[:Temperature]).to have_key(:Maximum)
+        expect(forecast[:Temperature][:Maximum]).to have_key(:Value)
+        expect(forecast[:Temperature][:Maximum][:Value]).to be_a Float
+      end
+    end
+  end
 end
