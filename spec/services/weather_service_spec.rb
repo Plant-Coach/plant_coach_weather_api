@@ -22,7 +22,7 @@ RSpec.describe WeatherService do
   describe '::get_forecast' do
     it 'returns the forecast' do
       data = WeatherService.get_forecast("35054_PC")
-
+      
       expect(data).to be_a Hash
 
       expect(data).to have_key(:Headline)
