@@ -1,11 +1,15 @@
 class Forecast
-  attr_reader :date, :high, :low, :day_conditions, :night_conditions
-  
+  attr_reader :id, :date, :sunrise, :sunset, :high, :low, :humidity, :wind, :weather
+
   def initialize(data)
-    @date = data[:Date]
-    @high = data[:Temperature][:Maximum][:Value]
-    @low = data[:Temperature][:Minimum][:Value]
-    @day_conditions = data[:Day][:IconPhrase]
-    @night_conditions = data[:Night][:IconPhrase]
+    @id = nil
+    @date = data[:dt]
+    @sunrise = data[:sunrise]
+    @sunset = data[:sunset]
+    @high = data[:temp][:max]
+    @low = data[:temp][:min]
+    @humidity = data[:humidity]
+    @wind = data[:wind_speed]
+    @weather = data[:weather][0][:main]
   end
 end

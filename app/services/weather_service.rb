@@ -1,19 +1,18 @@
 class WeatherService
   def self.location_search(location)
-    conn = Faraday.new("http://dataservice.accuweather.com") do |faraday|
-      faraday.params["q"] = location
-      faraday.params["details"] = true
-      faraday.params["apikey"] = ENV['weather_api_key']
-    end
-    response = conn.get("/locations/v1/cities/search/")
+    response = Faraday.get("http://api.openweathermap.org/geo/1.0/zip?zip=#{location}&appid=#{ENV['weather_api_key']}")
     JSON.parse(response.body, symbolize_names: true)
   end
 
-  def self.get_forecast(location_key)
-    conn = Faraday.new("http://dataservice.accuweather.com") do |faraday|
-      faraday.params["apikey"] = ENV['weather_api_key']
+  def self.get_forecast(lat, lon)
+    conn = Faraday.new("https://api.openweathermap.org") do |faraday|
+      faraday.params["appid"] = ENV['weather_api_key']
+      faraday.params["lat"] = lat
+      faraday.params["lon"] = lon
+      faraday.params[:exclude] = "minutely,hourly"
+      faraday.params[:units] = "imperial"
     end
-    response = conn.get("/forecasts/v1/daily/5day/#{location_key}")
+    response = conn.get("/data/2.5/onecall")
     JSON.parse(response.body, symbolize_names: true)
   end
 end
