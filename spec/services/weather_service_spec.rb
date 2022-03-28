@@ -5,48 +5,54 @@ RSpec.describe WeatherService do
     it 'returns the location data based on a string search' do
       data = WeatherService.location_search("80121")
 
-      expect(data[0]).to have_key(:GeoPosition)
-      expect(data[0][:GeoPosition]).to be_a Hash
+      expect(data).to have_key(:lat)
+      expect(data[:lat]).to be_a Float
 
-      expect(data[0][:GeoPosition]).to have_key(:Latitude)
-      expect(data[0][:GeoPosition][:Latitude]).to be_a Float
+      expect(data).to have_key(:lon)
+      expect(data[:lon]).to be_a Float
 
-      expect(data[0][:GeoPosition]).to have_key(:Longitude)
-      expect(data[0][:GeoPosition][:Longitude]).to be_a Float
+      expect(data).to have_key(:zip)
+      expect(data[:zip]).to be_a String
 
-      expect(data[0]).to have_key(:EnglishName)
-      expect(data[0][:EnglishName]).to be_a String
+      expect(data).to have_key(:name)
+      expect(data[:name]).to be_a String
     end
   end
 
   describe '::get_forecast' do
     it 'returns the forecast' do
-      data = WeatherService.get_forecast("35054_PC")
-      
+      lat = 39.6118
+      lon = -104.9506
+      data = WeatherService.get_forecast(lat, lon)
+
       expect(data).to be_a Hash
 
-      expect(data).to have_key(:Headline)
-      expect(data).to be_a Hash
+      expect(data).to have_key(:lat)
+      expect(data[:lat]).to be_a Float
 
-      expect(data[:Headline]).to have_key(:Text)
-      expect(data[:Headline][:Text]).to be_a String
+      expect(data).to have_key(:lon)
+      expect(data[:lon]).to be_a Float
 
-      expect(data).to have_key(:DailyForecasts)
-      expect(data[:DailyForecasts]).to be_an Array
+      expect(data).to have_key(:current)
+      expect(data[:current]).to be_a Hash
 
-      data[:DailyForecasts].each do |forecast|
-        expect(forecast).to have_key(:Date)
-        expect(forecast).to have_key(:Temperature)
-        expect(forecast).to have_key(:Day)
-        expect(forecast).to have_key(:Night)
+      expect(data).to have_key(:daily)
+      expect(data[:daily]).to be_an Array
 
-        expect(forecast[:Temperature]).to have_key(:Minimum)
-        expect(forecast[:Temperature][:Minimum]).to have_key(:Value)
-        expect(forecast[:Temperature][:Minimum][:Value]).to be_a Float
+      data[:daily].each do |forecast|
+        expect(forecast).to have_key(:dt)
+        expect(forecast).to have_key(:sunrise)
+        expect(forecast).to have_key(:sunset)
+        expect(forecast).to have_key(:moonrise)
+        expect(forecast).to have_key(:moonset)
 
-        expect(forecast[:Temperature]).to have_key(:Maximum)
-        expect(forecast[:Temperature][:Maximum]).to have_key(:Value)
-        expect(forecast[:Temperature][:Maximum][:Value]).to be_a Float
+        expect(forecast[:temp]).to have_key(:min)
+        expect(forecast[:temp][:min]).to be_a Float
+
+        expect(forecast[:temp]).to have_key(:max)
+        expect(forecast[:temp][:max]).to be_a Float
+
+        expect(forecast[:weather][0]).to have_key(:main)
       end
     end
   end
