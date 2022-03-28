@@ -11,27 +11,39 @@ RSpec.describe 'Weather API Endpoints' do
 
       expect(result).to have_key(:data)
 
-      expect(result[:data]).to have_key(:id)
+      expect(result[:data]).to be_an Array
 
-      expect(result[:data]).to have_key(:forecast)
+      result[:data].each do |forecast|
+        expect(forecast).to have_key(:type)
+        expect(forecast[:type]).to eq("forecast")
+        expect(forecast[:type]).to be_a String
 
-      expect(result[:data][:forecast]).to be_an Array
+        expect(forecast).to have_key(:attributes)
+        expect(forecast[:attributes]).to be_a Hash
 
-      result[:data][:forecast].each do |forecast|
-        expect(forecast).to have_key(:date)
-        expect(forecast[:date]).to be_a String
+        expect(forecast[:attributes]).to have_key(:date)
+        expect(forecast[:attributes][:date]).to be_a Integer
 
-        expect(forecast).to have_key(:high)
-        expect(forecast[:high]).to be_a Float
+        expect(forecast[:attributes]).to have_key(:sunrise)
+        expect(forecast[:attributes][:sunrise]).to be_a Integer
 
-        expect(forecast).to have_key(:low)
-        expect(forecast[:low]).to be_a Float
+        expect(forecast[:attributes]).to have_key(:sunset)
+        expect(forecast[:attributes][:sunset]).to be_a Integer
 
-        expect(forecast).to have_key(:day_conditions)
-        expect(forecast[:day_conditions]).to be_a String
+        expect(forecast[:attributes]).to have_key(:high)
+        expect(forecast[:attributes][:high]).to be_a Float
 
-        expect(forecast).to have_key(:night_conditions)
-        expect(forecast[:night_conditions]).to be_a String
+        expect(forecast[:attributes]).to have_key(:low)
+        expect(forecast[:attributes][:low]).to be_a Float
+
+        expect(forecast[:attributes]).to have_key(:humidity)
+        expect(forecast[:attributes][:humidity]).to be_a Integer
+
+        expect(forecast[:attributes]).to have_key(:wind)
+        expect(forecast[:attributes][:wind]).to be_a Float
+
+        expect(forecast[:attributes]).to have_key(:weather)
+        expect(forecast[:attributes][:weather]).to be_a String
       end
     end
   end
