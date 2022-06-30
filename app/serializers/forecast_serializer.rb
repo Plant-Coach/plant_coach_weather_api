@@ -1,4 +1,10 @@
 class ForecastSerializer
   include JSONAPI::Serializer
-  attributes :date, :sunrise, :sunset, :high, :low, :humidity, :wind, :weather
+  attributes  :id,
+              :lat,
+              :lon,
+              :current_weather,
+              :daily_weather,
+              :hourly_weather,
+              :alerts
 end
