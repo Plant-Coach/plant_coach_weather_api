@@ -9,7 +9,7 @@ class WeatherService
       faraday.params["appid"] = ENV['weather_api_key']
       faraday.params["lat"] = lat
       faraday.params["lon"] = lon
-      faraday.params[:exclude] = "minutely,hourly"
+      faraday.params[:exclude] = "minutely"
       faraday.params[:units] = "imperial"
     end
     response = conn.get("/data/2.5/onecall")
