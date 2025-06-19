@@ -42,5 +42,5 @@ jobs:
           {"name": "POSTGRES_USER", "value": "${{ secrets.POSTGRES_USER }}"}, \
           {"name": "POSTGRES_PASSWORD", "value": "${{ secrets.POSTGRES_PASSWORD }}"}]' \
           plant-coach-weather-api \
-          https://github.com/Plant-Coach/plant-coach-helm/releases/download/plant-coach-be-0.4.0/plant-coach-be-0.4.0.tgz \
+          ${{ secrets.HELM_CHART }} \
           --kube-context "$KUBE_CONTEXT"
