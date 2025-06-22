@@ -1,9 +1,8 @@
 {
-  "release-type": "ruby",
-  "prerelease": true,
-  "prerelease-type": "beta",
   "packages": {
     ".": {
     }
-  }
+  },
+  "prerelease": true,
+  "prerelease-type": "beta"
 }
