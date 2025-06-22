@@ -30,13 +30,11 @@ gem 'rspec_junit_formatter'
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
-
 gem 'mutex_m'
 
+# Added for pipeline work.
 gem 'bundler-audit'
-
 gem 'brakeman'
-
 gem 'rubocop'
 
 group :development, :test do
