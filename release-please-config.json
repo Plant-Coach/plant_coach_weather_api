@@ -8,7 +8,6 @@
   "draft": false,
   "prerelease": true,
   "versioning": "prerelease",
-  "release-as": "0.1.0",
   "packages": {
     ".": {
       "package-name": "plant-coach-weather-api"
