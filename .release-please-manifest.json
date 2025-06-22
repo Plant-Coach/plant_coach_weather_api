@@ -1,8 +1,9 @@
 {
   "packages": {
-    "path/to/pkg": "0.1.0"
-  },
-  "prerelease": true,
-  "prerelease-type": "alpha",
-  "prerelease-label": "alpha"
+    "path/to/pkg": "0.1.0",
+    "prerelease": true,
+    "prerelease-type": "alpha",
+    "prerelease-label": "alpha",
+    ".": "0.1.0"
+  }
 }
