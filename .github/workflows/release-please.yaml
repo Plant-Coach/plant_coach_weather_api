@@ -25,4 +25,3 @@ jobs:
           release-type: ruby
           config-file: release-please-config.json
           manifest-file: .release-please-manifest.json
-          bump-minor-pre-major: true
