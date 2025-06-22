@@ -1,0 +1,16 @@
+# Changelog
+
+## 1.0.0 (2025-06-22)
+
+
+### Features
+
+* Consume an endpoint that provides frost date information ([410ca61](https://github.com/Plant-Coach/plant_coach_weather_api/commit/410ca61e25c1369167923a7989c9cf34125154e4))
+* Consume api that provides a fall frost date ([2c4f8e3](https://github.com/Plant-Coach/plant_coach_weather_api/commit/2c4f8e3ec9f52d96420eeca0b8cca660d80f4637))
+* Create frost date endpoint ([e3812ba](https://github.com/Plant-Coach/plant_coach_weather_api/commit/e3812ba5fbad132780534b482748fd76338dce0b))
+* Expose new weather forecast endpoint ([731b7cd](https://github.com/Plant-Coach/plant_coach_weather_api/commit/731b7cde7efe5b838830854a9ad6586dd441e739))
+
+
+### Bug Fixes
+
+* **request spec:** removed incorrect Float assertion ([#38](https://github.com/Plant-Coach/plant_coach_weather_api/issues/38)) ([0ee9f3e](https://github.com/Plant-Coach/plant_coach_weather_api/commit/0ee9f3e314213b5f30df1a8028afc52a02e9da59))
