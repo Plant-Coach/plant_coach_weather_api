@@ -2,5 +2,5 @@
   "prerelease": true,
   "prerelease-type": "rc",
   "prerelease-label": "rc",
-  ".": "0.1.0-rc.1"
+  ".": "1.0.0"
 }
