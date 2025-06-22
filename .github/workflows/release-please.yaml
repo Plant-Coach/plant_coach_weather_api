@@ -19,8 +19,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: googleapis/release-please-action@v4
+        id: release
         with:
           token: ${{ secrets.MY_RELEASE_PLEASE_TOKEN }}
-          release-type: ruby
+          release-type: simple
           config-file: release-please-config.json
           manifest-file: .release-please-manifest.json
+      - name: Print output for debugging
+        continue-on-error: true
+        run: |
+          echo "Release outputs:"
+          echo "${{ steps.release.outputs }}"
