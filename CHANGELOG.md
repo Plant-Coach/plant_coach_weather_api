@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.1-rc.1](https://github.com/Plant-Coach/plant_coach_weather_api/compare/v0.1.1-rc...v0.1.1-rc.1) (2025-06-22)
+
+
+### Bug Fixes
+
+* **dummy commit:** testing release-please automation ([#92](https://github.com/Plant-Coach/plant_coach_weather_api/issues/92)) ([7e05903](https://github.com/Plant-Coach/plant_coach_weather_api/commit/7e05903d9c05939f12e4dd9eaa785647969436ba))
+
 ## [0.1.1-rc](https://github.com/Plant-Coach/plant_coach_weather_api/compare/v0.1.0...v0.1.1-rc) (2025-06-22)
 
 
