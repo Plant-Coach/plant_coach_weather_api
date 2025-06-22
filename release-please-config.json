@@ -3,6 +3,8 @@
     ".": {
     }
   },
+  "release-type": "ruby",
   "prerelease": true,
-  "prerelease-type": "beta"
+  "prerelease-type": "beta",
+  "bump-minor-pre-major": true
 }
