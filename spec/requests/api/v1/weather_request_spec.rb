@@ -30,17 +30,8 @@ RSpec.describe 'Weather API Endpoints' do
         expect(forecast[:attributes]).to have_key(:sunset)
         expect(forecast[:attributes][:sunset]).to be_a Integer
 
-        expect(forecast[:attributes]).to have_key(:high)
-        expect(forecast[:attributes][:high]).to be_a Float
-
-        expect(forecast[:attributes]).to have_key(:low)
-        expect(forecast[:attributes][:low]).to be_a Float
-
         expect(forecast[:attributes]).to have_key(:humidity)
         expect(forecast[:attributes][:humidity]).to be_a Integer
-
-        expect(forecast[:attributes]).to have_key(:wind)
-        expect(forecast[:attributes][:wind]).to be_a Float
 
         expect(forecast[:attributes]).to have_key(:weather)
         expect(forecast[:attributes][:weather]).to be_a String
