@@ -4,5 +4,6 @@
   },
   "prerelease": true,
   "prerelease-type": "alpha",
-  "prerelease-label": "alpha"
+  "prerelease-label": "alpha",
+  ".": "1.0.0"
 }
