@@ -1,7 +1,12 @@
 on:
-  push:
+  workflow_run:
+    workflows:
+      - "Build and Push"
+      - "Test and Lint"
     branches:
       - main
+    types:
+      - completed
 
 permissions:
   contents: write
