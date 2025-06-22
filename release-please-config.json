@@ -4,6 +4,7 @@
       "changelog-path": "CHANGELOG.md",
       "release-type": "ruby",
       "prerelease-type": "rc",
+      "prerelease-label": "rc",
       "bump-minor-pre-major": true,
       "bump-patch-for-minor-pre-major": false,
       "draft": false,
