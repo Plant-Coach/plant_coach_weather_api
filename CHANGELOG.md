@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.0-rc](https://github.com/Plant-Coach/plant_coach_weather_api/compare/v0.1.0...v0.2.0-rc) (2025-06-23)
+
+
+### Features
+
+* **release please:** add release please and set first version ([#96](https://github.com/Plant-Coach/plant_coach_weather_api/issues/96)) ([1692b45](https://github.com/Plant-Coach/plant_coach_weather_api/commit/1692b454d6dbd9cd0381be1679962c3a7ce7ea40))
+
 ## [0.2.0-rc.1](https://github.com/Plant-Coach/plant_coach_weather_api/compare/v0.1.1-rc.1...v0.2.0-rc.1) (2025-06-22)
 
 
