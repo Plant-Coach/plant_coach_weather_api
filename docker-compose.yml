@@ -1,0 +1,10 @@
+services:
+  plant-coach-weather-api:
+    build: .
+    command: "./bin/rails server"
+    environment:
+      - RAILS_ENV=${RAILS_ENV}
+      - OPEN_WEATHER_API_KEY=${OPEN_WEATHER_API_KEY}
+      - RAILS_MASTER_KEY=${WEATHER_API_MASTER_KEY}
+    ports:
+      - 3000:3000
