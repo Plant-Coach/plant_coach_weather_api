@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.0-rc.2](https://github.com/Plant-Coach/plant_coach_weather_api/compare/v0.2.0-rc.1...v0.2.0-rc.2) (2025-06-24)
+
+
+### Features
+
+* add kubernetes health probe setup ([#104](https://github.com/Plant-Coach/plant_coach_weather_api/issues/104)) ([b582544](https://github.com/Plant-Coach/plant_coach_weather_api/commit/b582544791688a9540ac414b4f0a5de7bc66c08a))
+
 ## [0.2.0-rc.1](https://github.com/Plant-Coach/plant_coach_weather_api/compare/v0.2.0-rc...v0.2.0-rc.1) (2025-06-24)
 
 
