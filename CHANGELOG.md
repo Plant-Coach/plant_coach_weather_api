@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.0-rc.1](https://github.com/Plant-Coach/plant_coach_weather_api/compare/v0.2.0-rc...v0.2.0-rc.1) (2025-06-24)
+
+
+### Bug Fixes
+
+* **forecast test:** remove erroneous float assertions ([#100](https://github.com/Plant-Coach/plant_coach_weather_api/issues/100)) ([ea05241](https://github.com/Plant-Coach/plant_coach_weather_api/commit/ea0524104ada35a8534f2866e0a0fdb40c1c29e4))
+
 ## [0.2.0-rc](https://github.com/Plant-Coach/plant_coach_weather_api/compare/v0.1.0...v0.2.0-rc) (2025-06-23)
 
 
