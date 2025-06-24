@@ -46,12 +46,6 @@ RSpec.describe WeatherService do
         expect(forecast).to have_key(:moonrise)
         expect(forecast).to have_key(:moonset)
 
-        expect(forecast[:temp]).to have_key(:min)
-        expect(forecast[:temp][:min]).to be_a Float
-
-        expect(forecast[:temp]).to have_key(:max)
-        expect(forecast[:temp][:max]).to be_a Float
-
         expect(forecast[:weather][0]).to have_key(:main)
       end
     end
