@@ -36,4 +36,6 @@ jobs:
           --set-json='env_variables=[{"name": "RAILS_ENV", "value": "${{ secrets.RAILS_ENV }}"}, {"name": "RAILS_MASTER_KEY", "value": "${{ secrets.RAILS_MASTER_KEY }}"}, {"name": "POSTGRES_PORT", "value": "${{ secrets.POSTGRES_PORT }}"}, {"name": "POSTGRES_DB", "value": "${{ secrets.POSTGRES_DB }}"}, {"name": "POSTGRES_HOST", "value": "${{ secrets.POSTGRES_HOST }}"}, {"name": "POSTGRES_USER", "value": "${{ secrets.POSTGRES_USER }}"}, {"name": "POSTGRES_PASSWORD", "value": "${{ secrets.POSTGRES_PASSWORD }}"}, {"name": "OPEN_WEATHER_API_KEY", "value": "${{ secrets.OPEN_WEATHER_API_KEY }}"}]' \
           plant-coach-weather-api \
           ${{ secrets.HELM_CHART }} \
-          --kube-context "$KUBE_CONTEXT"
+          --kube-context "$KUBE_CONTEXT" \
+          --username joel-grant \
+          --password ${{ secrets.CLOUDSMITH_API_KEY }}
