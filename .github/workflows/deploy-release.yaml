@@ -41,5 +41,6 @@ jobs:
           $REPO_NAME \
           ${{ secrets.HELM_CHART }} \
           --kube-context "$KUBE_CONTEXT" \
+          --namespace plant-coach-production\
           --username joel-grant \
           --password ${{ secrets.CLOUDSMITH_API_KEY }}
