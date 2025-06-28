@@ -53,17 +53,18 @@ RSpec.describe FrostDateService do
     end
     
 
-  context 'when the API returns a non-200 status code' do
-    it 'returns nil and logs the error' do
-      fake_response = double('Response', status: 500, body: '{}')
-      allow(Faraday).to receive(:new).and_return(double(get: fake_response))
-      allow(Rails.logger).to receive(:error)
-      
-      result = FrostDateService.get_spring_frost_dates(weather_station_id)
-
-      expect(result).to be_nil
-     
-      expect(Rails.logger).to have_received(:error).with(/Failed API request/)
+    context 'when the API returns a non-200 status code' do
+      it 'returns nil and logs the error' do
+        fake_response = double('Response', status: 500, body: '{}')
+        allow(Faraday).to receive(:new).and_return(double(get: fake_response))
+        allow(Rails.logger).to receive(:error)
+        
+        result = FrostDateService.get_spring_frost_dates(weather_station_id)
+  
+        expect(result).to be_nil
+       
+        expect(Rails.logger).to have_received(:error).with(/Failed API request/)
+      end
     end
   end
 
