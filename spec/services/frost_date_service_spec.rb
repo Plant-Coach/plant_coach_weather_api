@@ -49,7 +49,18 @@ RSpec.describe FrostDateService do
         expect(Rails.logger).to have_received(:error).with(/Network error/)
       end
     end
-   
+    context 'when a ConnectionFailed error occurs' do
+      it 'returns nil and logs the error' do
+        allow(Faraday).to receive(:new).and_raise(Faraday::ParserError.new('ParserError'))
+        allow(Rails.logger).to receive(:error)
+
+        result = FrostDateService.find_weather_station(latitude, longitude)
+
+        expect(result).to be_nil
+        
+        expect(Rails.logger).to have_received(:error).with(/Network error/)
+      end
+    end
   end
 
   describe '::get_spring_frost_dates' do
