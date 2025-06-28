@@ -4,7 +4,8 @@ RSpec.describe FrostDateService do
   describe '::find_weather_station' do
     let(:latitude) { 40.7128 }
     let(:longitude) { -74.0060 }
-
+    let(:weather_station_id) { '12345' }
+    
     context 'when a network error occurs' do
       it 'returns nil and logs the error' do
         allow(Faraday).to receive(:new).and_raise(Faraday::TimeoutError.new('Timeout'))
@@ -49,6 +50,20 @@ RSpec.describe FrostDateService do
 
       expect(data[1]).to have_key(:prob_50)
       expect(data[1][:prob_50]).to be_a String
+    end
+    
+
+  context 'when the API returns a non-200 status code' do
+    it 'returns nil and logs the error' do
+      fake_response = double('Response', status: 500, body: '{}')
+      allow(Faraday).to receive(:new).and_return(double(get: fake_response))
+      allow(Rails.logger).to receive(:error)
+      
+      result = FrostDateService.get_spring_frost_dates(weather_station_id)
+
+      expect(result).to be_nil
+     
+      expect(Rails.logger).to have_received(:error).with(/Failed API request/)
     end
   end
 
