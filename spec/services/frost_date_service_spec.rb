@@ -76,7 +76,7 @@ RSpec.describe FrostDateService do
   
         expect(result).to be_empty
        
-        expect(Rails.logger).to have_received(:error).with(/Network error/)
+        expect(Rails.logger).to have_received(:error).with(/API request failed with status code: 500/)
       end
     end
   end
