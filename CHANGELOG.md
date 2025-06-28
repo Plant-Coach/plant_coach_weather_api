@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.0](https://github.com/Plant-Coach/plant_coach_weather_api/compare/v0.3.0...v0.4.0) (2025-06-28)
+
+
+### Features
+
+* handle exceptions from frost date service ([#123](https://github.com/Plant-Coach/plant_coach_weather_api/issues/123)) ([86255eb](https://github.com/Plant-Coach/plant_coach_weather_api/commit/86255ebaaac844c083be17c0f55ceab992b938fe))
+
 ## [0.3.0](https://github.com/Plant-Coach/plant_coach_weather_api/compare/v0.2.0...v0.3.0) (2025-06-28)
 
 
