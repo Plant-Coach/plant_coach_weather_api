@@ -51,7 +51,7 @@ RSpec.describe FrostDateService do
     end
     context 'when a ParserError error occurs' do
       it 'returns nil and logs the error' do
-        allow(JSON).to receive(:new).and_raise(JSON::ParserError.new('ParserError'))
+        allow(JSON).to receive(:parse).and_raise(JSON::ParserError.new('ParserError'))
         allow(Rails.logger).to receive(:error)
 
         result = FrostDateService.find_weather_station(latitude, longitude)
@@ -120,7 +120,7 @@ RSpec.describe FrostDateService do
     end
     context 'when a ParserError error occurs' do
       it 'returns nil and logs the error' do
-        allow(JSON).to receive(:new).and_raise(JSON::ParserError.new('ParserError'))
+        allow(JSON).to receive(:parse).and_raise(JSON::ParserError.new('ParserError'))
         allow(Rails.logger).to receive(:error)
 
         result = FrostDateService.get_spring_frost_dates(weather_station_id)
@@ -189,7 +189,7 @@ RSpec.describe FrostDateService do
     end
     context 'when a ParserError error occurs' do
       it 'returns nil and logs the error' do
-        allow(JSON).to receive(:new).and_raise(JSON::ParserError.new('ParserError'))
+        allow(JSON).to receive(:parse).and_raise(JSON::ParserError.new('ParserError'))
         allow(Rails.logger).to receive(:error)
 
         result = FrostDateService.get_fall_frost_dates(weather_station_id)
