@@ -8,6 +8,7 @@ RSpec.describe FrostDateService do
     context 'when a network error occurs' do
       it 'returns nil and logs the error' do
         allow(Faraday).to receive(:new).and_raise(Faraday::TimeoutError.new('Timeout'))
+        allow(Rails.logger).to receive(:error)
 
         result = FrostDateService.find_weather_station(latitude, longitude)
 
