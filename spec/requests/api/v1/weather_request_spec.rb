@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe 'Weather API Endpoints' do
   describe 'POST /forecast' do
     it 'returns the 5-day forecast' do
-      location_params = { location: "80123" }
-      post "/api/v1/forecast", params: location_params
+      location_params = { location: '80123' }
+      post '/api/v1/forecast', params: location_params
       result = JSON.parse(response.body, symbolize_names: true)
 
       expect(response).to be_successful
@@ -15,7 +15,7 @@ RSpec.describe 'Weather API Endpoints' do
 
       result[:data].each do |forecast|
         expect(forecast).to have_key(:type)
-        expect(forecast[:type]).to eq("forecast")
+        expect(forecast[:type]).to eq('forecast')
         expect(forecast[:type]).to be_a String
 
         expect(forecast).to have_key(:attributes)

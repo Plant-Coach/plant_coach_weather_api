@@ -5,14 +5,14 @@ class WeatherService
   end
 
   def self.get_forecast(lat, lon)
-    conn = Faraday.new("https://api.openweathermap.org") do |faraday|
-      faraday.params["appid"] = ENV['OPEN_WEATHER_API_KEY']
-      faraday.params["lat"] = lat
-      faraday.params["lon"] = lon
-      faraday.params[:exclude] = "minutely,hourly"
-      faraday.params[:units] = "imperial"
+    conn = Faraday.new('https://api.openweathermap.org') do |faraday|
+      faraday.params['appid'] = ENV['OPEN_WEATHER_API_KEY']
+      faraday.params['lat'] = lat
+      faraday.params['lon'] = lon
+      faraday.params[:exclude] = 'minutely,hourly'
+      faraday.params[:units] = 'imperial'
     end
-    response = conn.get("/data/3.0/onecall")
+    response = conn.get('/data/3.0/onecall')
     JSON.parse(response.body, symbolize_names: true)
   end
 end
