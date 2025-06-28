@@ -1,8 +1,6 @@
 {
   "changelog-path": "CHANGELOG.md",
   "release-type": "simple",
-  "prerelease-type": "rc",
-  "prerelease-label": "rc",
   "bump-minor-pre-major": true,
   "prerelease": true,
   "versioning": "prerelease",
