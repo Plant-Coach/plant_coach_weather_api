@@ -4,7 +4,6 @@ RSpec.describe FrostDateService do
   describe '::find_weather_station' do
     let(:latitude) { 40.7128 }
     let(:longitude) { -74.0060 }
-    let(:weather_station_id) { '12345' }
     
     context 'when a network error occurs' do
       it 'returns nil and logs the error' do
@@ -37,6 +36,8 @@ RSpec.describe FrostDateService do
   end
 
   describe '::get_spring_frost_dates' do
+    let(:weather_station_id) { '12345' }
+    
     it 'returns all the spring frost date probabilities for a given location' do
       data = FrostDateService.get_spring_frost_dates('54762')
 
@@ -51,7 +52,6 @@ RSpec.describe FrostDateService do
       expect(data[1]).to have_key(:prob_50)
       expect(data[1][:prob_50]).to be_a String
     end
-    
 
     context 'when the API returns a non-200 status code' do
       it 'returns nil and logs the error' do
