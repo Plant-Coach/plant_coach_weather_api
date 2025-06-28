@@ -1,6 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe FrostDateService do
+  let(:weather_station_id) { '12345' }
+  
   describe '::find_weather_station' do
     let(:latitude) { 40.7128 }
     let(:longitude) { -74.0060 }
@@ -36,8 +38,6 @@ RSpec.describe FrostDateService do
   end
 
   describe '::get_spring_frost_dates' do
-    let(:weather_station_id) { '12345' }
-    
     it 'returns all the spring frost date probabilities for a given location' do
       data = FrostDateService.get_spring_frost_dates('54762')
 
@@ -67,7 +67,7 @@ RSpec.describe FrostDateService do
     end
 
     context 'when the API returns a non-200 status code' do
-      it 'returns nil and logs the error' do
+      it 'returns an empty response and logs the error' do
         fake_response = double('Response', status: 500, body: '{}')
         allow(Faraday).to receive(:new).and_return(double(get: fake_response))
         allow(Rails.logger).to receive(:error)
@@ -95,6 +95,33 @@ RSpec.describe FrostDateService do
 
       expect(data[1]).to have_key(:prob_50)
       expect(data[1][:prob_50]).to be_a String
+    end
+    
+    context 'when a network error occurs' do
+      it 'returns nil and logs the error' do
+        allow(Faraday).to receive(:new).and_raise(Faraday::TimeoutError.new('Timeout'))
+        allow(Rails.logger).to receive(:error)
+
+        result = FrostDateService.get_fall_frost_dates(weather_station_id)
+
+        expect(result).to be_nil
+        
+        expect(Rails.logger).to have_received(:error).with(/Network error/)
+      end
+    end
+
+    context 'when the API returns a non-200 status code' do
+      it 'returns an empty response and logs the error' do
+        fake_response = double('Response', status: 500, body: '{}')
+        allow(Faraday).to receive(:new).and_return(double(get: fake_response))
+        allow(Rails.logger).to receive(:error)
+        
+        result = FrostDateService.get_fall_frost_dates(weather_station_id)
+  
+        expect(result).to be_empty
+       
+        expect(Rails.logger).to have_received(:error).with(/API request failed with status code: 500/)
+      end
     end
   end
 end
