@@ -20,7 +20,15 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      
+      -
+        name: Create build commit
+        run: |
+          github_sha_hash=${{ github.sha }}
+          github_sha_short="${github_sha_hash:0:7}"
+
+          echo "GitHub commit hash: ${github_sha_short}"
+          echo "COMMIT_HASH=${github_sha_short}" >> $GITHUB_ENV
+          
       - name: Add Kubeconfig
         run: |
           mkdir /home/runner/.kube
