@@ -24,7 +24,7 @@ RSpec.describe FrostDateService do
       expect(data[0][:lon]).to be_a String
     end
 
-    context 'when a timeout error occurs' do
+    context 'when a Timeout error occurs' do
       it 'returns nil and logs the error' do
         allow(Faraday).to receive(:new).and_raise(Faraday::TimeoutError.new('Timeout'))
         allow(Rails.logger).to receive(:error)
@@ -37,7 +37,7 @@ RSpec.describe FrostDateService do
       end
     end
     
-    context 'when a connectionfailed error occurs' do
+    context 'when a ConnectionFailed error occurs' do
       it 'returns nil and logs the error' do
         allow(Faraday).to receive(:new).and_raise(Faraday::ConnectionFailed.new('ConnectionFailed'))
         allow(Rails.logger).to receive(:error)
@@ -68,9 +68,22 @@ RSpec.describe FrostDateService do
       expect(data[1][:prob_50]).to be_a String
     end
     
-    context 'when a network error occurs' do
+    context 'when a Timeout error occurs' do
       it 'returns nil and logs the error' do
         allow(Faraday).to receive(:new).and_raise(Faraday::TimeoutError.new('Timeout'))
+        allow(Rails.logger).to receive(:error)
+
+        result = FrostDateService.get_spring_frost_dates(weather_station_id)
+
+        expect(result).to be_nil
+        
+        expect(Rails.logger).to have_received(:error).with(/Network error/)
+      end
+    end
+    
+    context 'when a ConnectionFailed error occurs' do
+      it 'returns nil and logs the error' do
+        allow(Faraday).to receive(:new).and_raise(Faraday::ConnectionFailed.new('Timeout'))
         allow(Rails.logger).to receive(:error)
 
         result = FrostDateService.get_spring_frost_dates(weather_station_id)
@@ -112,9 +125,22 @@ RSpec.describe FrostDateService do
       expect(data[1][:prob_50]).to be_a String
     end
     
-    context 'when a network error occurs' do
+    context 'when a Timeout error occurs' do
       it 'returns nil and logs the error' do
         allow(Faraday).to receive(:new).and_raise(Faraday::TimeoutError.new('Timeout'))
+        allow(Rails.logger).to receive(:error)
+
+        result = FrostDateService.get_fall_frost_dates(weather_station_id)
+
+        expect(result).to be_nil
+        
+        expect(Rails.logger).to have_received(:error).with(/Network error/)
+      end
+    end
+    
+    context 'when a ConnectionFailed error occurs' do
+      it 'returns nil and logs the error' do
+        allow(Faraday).to receive(:new).and_raise(Faraday::ConnectionFailed.new('ConnectionFailed'))
         allow(Rails.logger).to receive(:error)
 
         result = FrostDateService.get_fall_frost_dates(weather_station_id)
