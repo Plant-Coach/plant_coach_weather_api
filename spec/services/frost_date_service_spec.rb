@@ -49,7 +49,7 @@ RSpec.describe FrostDateService do
         expect(Rails.logger).to have_received(:error).with(/Network error/)
       end
     end
-    context 'when a ConnectionFailed error occurs' do
+    context 'when a ParserError error occurs' do
       it 'returns nil and logs the error' do
         allow(Faraday).to receive(:new).and_raise(Faraday::ParserError.new('ParserError'))
         allow(Rails.logger).to receive(:error)
@@ -58,7 +58,7 @@ RSpec.describe FrostDateService do
 
         expect(result).to be_nil
         
-        expect(Rails.logger).to have_received(:error).with(/Network error/)
+        expect(Rails.logger).to have_received(:error).with(/Failed to parse JSON response/)
       end
     end
   end
@@ -118,6 +118,18 @@ RSpec.describe FrostDateService do
         expect(Rails.logger).to have_received(:error).with(/API request failed with status code: 500/)
       end
     end
+    context 'when a ParserError error occurs' do
+      it 'returns nil and logs the error' do
+        allow(Faraday).to receive(:new).and_raise(Faraday::ParserError.new('ParserError'))
+        allow(Rails.logger).to receive(:error)
+
+        result = FrostDateService.get_spring_frost_dates(weather_station_id)
+
+        expect(result).to be_nil
+        
+        expect(Rails.logger).to have_received(:error).with(/Failed to parse JSON response/)
+      end
+    end
   end
 
   describe '::get_fall_frost_dates' do
@@ -173,6 +185,18 @@ RSpec.describe FrostDateService do
         expect(result).to be_empty
        
         expect(Rails.logger).to have_received(:error).with(/API request failed with status code: 500/)
+      end
+    end
+    context 'when a ParserError error occurs' do
+      it 'returns nil and logs the error' do
+        allow(Faraday).to receive(:new).and_raise(Faraday::ParserError.new('ParserError'))
+        allow(Rails.logger).to receive(:error)
+
+        result = FrostDateService.get_fall_frost_dates(weather_station_id)
+
+        expect(result).to be_nil
+        
+        expect(Rails.logger).to have_received(:error).with(/Failed to parse JSON response/)
       end
     end
   end
