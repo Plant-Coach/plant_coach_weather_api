@@ -22,15 +22,15 @@ RSpec.describe FrostDateService do
 
   describe '::get_spring_frost_dates' do
     it 'returns all the spring frost date probabilities for a given location' do
-      data = FrostDateService.get_spring_frost_dates("54762")
+      data = FrostDateService.get_spring_frost_dates('54762')
 
       expect(data).to be_an Array
 
       expect(data[1]).to have_key(:season_id)
-      expect(data[1][:season_id]).to eq("1")
+      expect(data[1][:season_id]).to eq('1')
 
       expect(data[1]).to have_key(:temperature_threshold)
-      expect(data[1][:temperature_threshold]).to eq("32")
+      expect(data[1][:temperature_threshold]).to eq('32')
 
       expect(data[1]).to have_key(:prob_50)
       expect(data[1][:prob_50]).to be_a String
@@ -39,15 +39,15 @@ RSpec.describe FrostDateService do
 
   describe '::get_fall_frost_dates' do
     it 'returns all the fall frost date probabilities for a given location' do
-      data = FrostDateService.get_fall_frost_dates("54762")
+      data = FrostDateService.get_fall_frost_dates('54762')
 
       expect(data).to be_an Array
 
       expect(data[1]).to have_key(:season_id)
-      expect(data[1][:season_id]).to eq("2")
+      expect(data[1][:season_id]).to eq('2')
 
       expect(data[1]).to have_key(:temperature_threshold)
-      expect(data[1][:temperature_threshold]).to eq("32")
+      expect(data[1][:temperature_threshold]).to eq('32')
 
       expect(data[1]).to have_key(:prob_50)
       expect(data[1][:prob_50]).to be_a String
