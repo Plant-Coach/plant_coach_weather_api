@@ -2,7 +2,6 @@ name: Build and Push
 
 on:
   push:
-    branches: ["main"]
 
 
 jobs:
@@ -49,7 +48,11 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          platforms: linux/amd64,linux/arm64
-          tags: |
-            ${{ secrets.DOCKERHUB_USERNAME}}/${{ steps.set-repo.outputs.REPO_NAME }}:${{ steps.commit-hash.outputs.COMMIT_HASH }}
-            ${{ secrets.DOCKERHUB_USERNAME}}/${{ steps.set-repo.outputs.REPO_NAME }}:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME}}/${{ steps.set-repo.outputs.REPO_NAME }}:${{ steps.commit-hash.outputs.COMMIT_HASH }}
+      -
+        name: Build and push latest
+        uses: docker/build-push-action@v6
+        with:
+          push: true
+          platforms: linux/arm64
+          tags: ${{ secrets.DOCKERHUB_USERNAME}}/${{ steps.set-repo.outputs.REPO_NAME }}:latest
