@@ -33,7 +33,7 @@ RSpec.describe FrostDateService do
 
         expect(result).to be_nil
         
-        expect(Rails.logger).to have_received(:error).with(/Network error/)
+        expect(Rails.logger).to have_received(:error).with(/Weather station API network error/)
       end
     end
     
@@ -46,7 +46,7 @@ RSpec.describe FrostDateService do
 
         expect(result).to be_nil
         
-        expect(Rails.logger).to have_received(:error).with(/Network error/)
+        expect(Rails.logger).to have_received(:error).with(/Weather station API network error/)
       end
     end
     context 'when a ParserError error occurs' do
@@ -58,7 +58,7 @@ RSpec.describe FrostDateService do
 
         expect(result).to be_nil
         
-        expect(Rails.logger).to have_received(:error).with(/Failed to parse JSON response/)
+        expect(Rails.logger).to have_received(:error).with(/Weather station API JSON parse error/)
       end
     end
   end
@@ -88,7 +88,7 @@ RSpec.describe FrostDateService do
 
         expect(result).to be_nil
         
-        expect(Rails.logger).to have_received(:error).with(/Network error/)
+        expect(Rails.logger).to have_received(:error).with(/Spring frost dates API network error/)
       end
     end
     
@@ -101,21 +101,21 @@ RSpec.describe FrostDateService do
 
         expect(result).to be_nil
         
-        expect(Rails.logger).to have_received(:error).with(/Network error/)
+        expect(Rails.logger).to have_received(:error).with(/Spring frost dates API network error/)
       end
     end
 
     context 'when the API returns a non-200 status code' do
-      it 'returns an empty response and logs the error' do
+      it 'returns nil and logs the error' do
         fake_response = double('Response', status: 500, body: '{}')
         allow(Faraday).to receive(:new).and_return(double(get: fake_response))
         allow(Rails.logger).to receive(:error)
         
         result = FrostDateService.get_spring_frost_dates(weather_station_id)
   
-        expect(result).to be_empty
+        expect(result).to be_nil
        
-        expect(Rails.logger).to have_received(:error).with(/API request failed with status code: 500/)
+        expect(Rails.logger).to have_received(:error).with(/Spring frost dates API request failed with status code: 500/)
       end
     end
     context 'when a ParserError error occurs' do
@@ -127,7 +127,7 @@ RSpec.describe FrostDateService do
 
         expect(result).to be_nil
         
-        expect(Rails.logger).to have_received(:error).with(/Failed to parse JSON response/)
+        expect(Rails.logger).to have_received(:error).with(/Spring frost dates API JSON parse error/)
       end
     end
   end
@@ -157,7 +157,7 @@ RSpec.describe FrostDateService do
 
         expect(result).to be_nil
         
-        expect(Rails.logger).to have_received(:error).with(/Network error/)
+        expect(Rails.logger).to have_received(:error).with(/Fall frost dates API network error/)
       end
     end
     
@@ -170,21 +170,21 @@ RSpec.describe FrostDateService do
 
         expect(result).to be_nil
         
-        expect(Rails.logger).to have_received(:error).with(/Network error/)
+        expect(Rails.logger).to have_received(:error).with(/Fall frost dates API network error/)
       end
     end
 
     context 'when the API returns a non-200 status code' do
-      it 'returns an empty response and logs the error' do
+      it 'returns nil and logs the error' do
         fake_response = double('Response', status: 500, body: '{}')
         allow(Faraday).to receive(:new).and_return(double(get: fake_response))
         allow(Rails.logger).to receive(:error)
         
         result = FrostDateService.get_fall_frost_dates(weather_station_id)
   
-        expect(result).to be_empty
+        expect(result).to be_nil
        
-        expect(Rails.logger).to have_received(:error).with(/API request failed with status code: 500/)
+        expect(Rails.logger).to have_received(:error).with(/Fall frost dates API request failed with status code: 500/)
       end
     end
     context 'when a ParserError error occurs' do
@@ -196,7 +196,7 @@ RSpec.describe FrostDateService do
 
         expect(result).to be_nil
         
-        expect(Rails.logger).to have_received(:error).with(/Failed to parse JSON response/)
+        expect(Rails.logger).to have_received(:error).with(/Fall frost dates API JSON parse error/)
       end
     end
   end
