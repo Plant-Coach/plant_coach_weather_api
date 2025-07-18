@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.4.1](https://github.com/Plant-Coach/plant_coach_weather_api/compare/v0.4.0...v0.4.1) (2025-07-18)
+
+
+### Bug Fixes
+
+* add multi support for docker image ([#127](https://github.com/Plant-Coach/plant_coach_weather_api/issues/127)) ([68e9363](https://github.com/Plant-Coach/plant_coach_weather_api/commit/68e9363ab8f883b227405f4f22083baa5bf3ad31))
+* fix k8s missing logs ([#131](https://github.com/Plant-Coach/plant_coach_weather_api/issues/131)) ([56af602](https://github.com/Plant-Coach/plant_coach_weather_api/commit/56af602b2da3e0b65b0531520d75ea211f62261f))
+
 ## [0.4.0](https://github.com/Plant-Coach/plant_coach_weather_api/compare/v0.3.0...v0.4.0) (2025-06-28)
 
 
