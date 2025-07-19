@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.5](https://github.com/Plant-Coach/plant_coach_weather_api/compare/v0.4.4...v0.4.5) (2025-07-19)
+
+
+### Bug Fixes
+
+* use rails 8 silencer ([f6efed4](https://github.com/Plant-Coach/plant_coach_weather_api/commit/f6efed43e75c8250756826e3e877061b55c3c5e9))
+
 ## [0.4.4](https://github.com/Plant-Coach/plant_coach_weather_api/compare/v0.4.3...v0.4.4) (2025-07-19)
 
 
