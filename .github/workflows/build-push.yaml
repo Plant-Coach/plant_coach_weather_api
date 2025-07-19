@@ -49,6 +49,8 @@ jobs:
         with:
           push: true
           platforms: linux/amd64,linux/arm64
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
           tags: |
             ${{ secrets.DOCKERHUB_USERNAME}}/${{ steps.set-repo.outputs.REPO_NAME }}:${{ steps.commit-hash.outputs.COMMIT_HASH }}
             ${{ secrets.DOCKERHUB_USERNAME}}/${{ steps.set-repo.outputs.REPO_NAME }}:latest
