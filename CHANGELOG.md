@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.4](https://github.com/Plant-Coach/plant_coach_weather_api/compare/v0.4.3...v0.4.4) (2025-07-19)
+
+
+### Bug Fixes
+
+* prevent excessive build/push runs ([0d26fe5](https://github.com/Plant-Coach/plant_coach_weather_api/commit/0d26fe5f73c2979a8a0f98f7ae79a5ed8e28230e))
+
 ## [0.4.3](https://github.com/Plant-Coach/plant_coach_weather_api/compare/v0.4.2...v0.4.3) (2025-07-19)
 
 
