@@ -79,4 +79,10 @@ Rails.application.configure do
     logger.formatter = config.log_formatter
     config.logger    = ActiveSupport::TaggedLogging.new(logger)
   end
+
+  # Prevent health checks from clogging up the logs.
+  config.silence_healthcheck_path = "/rails/health"
+
+  # Also silence readiness probe logs
+  config.middleware.insert_before Rails::Rack::Logger, Rails::Rack::SilenceRequest, path: "/rails/ready"
 end
