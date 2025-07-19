@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.2](https://github.com/Plant-Coach/plant_coach_weather_api/compare/v0.4.1...v0.4.2) (2025-07-19)
+
+
+### Bug Fixes
+
+* **logs:** remove health and ready checks ([#133](https://github.com/Plant-Coach/plant_coach_weather_api/issues/133)) ([605d113](https://github.com/Plant-Coach/plant_coach_weather_api/commit/605d1137f3da6d449387559555d934680daf5379))
+
 ## [0.4.1](https://github.com/Plant-Coach/plant_coach_weather_api/compare/v0.4.0...v0.4.1) (2025-07-18)
 
 
