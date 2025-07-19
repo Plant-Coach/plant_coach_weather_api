@@ -17,6 +17,9 @@ require 'action_cable/engine'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+# Require custom middleware
+require_relative '../app/middleware/health_check_logger_filter'
+
 module PlantCoachWeatherApi
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
@@ -31,5 +34,8 @@ module PlantCoachWeatherApi
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
+
+    # Add custom middleware to filter health check logs
+    config.middleware.insert_before Rails::Rack::Logger, HealthCheckLoggerFilter
   end
 end
