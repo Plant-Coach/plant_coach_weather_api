@@ -18,7 +18,7 @@ require 'action_cable/engine'
 Bundler.require(*Rails.groups)
 
 # Require custom middleware
-require_relative '../app/middleware/health_check_logger_filter'
+require_relative '../lib/rack/health_check_logger_filter'
 
 module PlantCoachWeatherApi
   class Application < Rails::Application
