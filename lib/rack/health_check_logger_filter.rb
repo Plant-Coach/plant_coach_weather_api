@@ -1,20 +1,22 @@
-class HealthCheckLoggerFilter
-  def initialize(app)
-    @app = app
-  end
-
-  def call(env)
-    # Skip logging for health check endpoints
-    if health_check_request?(env['PATH_INFO'])
-      Rails.logger.silence { @app.call(env) }
-    else
-      @app.call(env)
+module Rack
+  class HealthCheckLoggerFilter
+    def initialize(app)
+      @app = app
     end
-  end
 
-  private
+    def call(env)
+      # Skip logging for health check endpoints
+      if health_check_request?(env['PATH_INFO'])
+        Rails.logger.silence { @app.call(env) }
+      else
+        @app.call(env)
+      end
+    end
 
-  def health_check_request?(path)
-    path == '/rails/health' || path == '/rails/ready'
+    private
+
+    def health_check_request?(path)
+      path == '/rails/health' || path == '/rails/ready'
+    end
   end
 end
