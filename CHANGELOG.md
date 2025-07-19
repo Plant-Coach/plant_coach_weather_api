@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.3](https://github.com/Plant-Coach/plant_coach_weather_api/compare/v0.4.2...v0.4.3) (2025-07-19)
+
+
+### Bug Fixes
+
+* resolve application starting issue ([#137](https://github.com/Plant-Coach/plant_coach_weather_api/issues/137)) ([87af79f](https://github.com/Plant-Coach/plant_coach_weather_api/commit/87af79f4275c5fe636dfe09497e1ce8b67e1c989))
+
 ## [0.4.2](https://github.com/Plant-Coach/plant_coach_weather_api/compare/v0.4.1...v0.4.2) (2025-07-19)
 
 
