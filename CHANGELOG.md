@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.6](https://github.com/Plant-Coach/plant_coach_weather_api/compare/v0.4.5...v0.4.6) (2025-07-21)
+
+
+### Bug Fixes
+
+* resolve faraday ssl and docker compose issue ([#144](https://github.com/Plant-Coach/plant_coach_weather_api/issues/144)) ([4102185](https://github.com/Plant-Coach/plant_coach_weather_api/commit/41021850e165e9890d00425ec47472fec7ebf8a7))
+
 ## [0.4.5](https://github.com/Plant-Coach/plant_coach_weather_api/compare/v0.4.4...v0.4.5) (2025-07-19)
 
 
