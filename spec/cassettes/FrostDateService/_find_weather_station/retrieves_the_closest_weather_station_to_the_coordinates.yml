@@ -1,0 +1,43 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.farmsense.net/v1/frostdates/stations/?lat=39.7392&lon=-104.9903
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.13.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Apache/2.4
+      Cache-Control:
+      - no-cache, must-revalidate
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 21 Jul 2025 01:29:33 GMT
+      Access-Control-Allow-Origin:
+      - "*"
+      Set-Cookie:
+      - X-Mapping-mmgahdea=A13A7FC1B037E650ADD62170A8C82D00; path=/
+      Content-Length:
+      - '1211'
+    body:
+      encoding: UTF-8
+      string: '[{"id":"54762","name":"LAKEWOOD","elevation":"5","lat":"39.750000","lon":"-105.116669","distance":"6.7552233637876675"},{"id":"52220","name":"DENVER
+        STAPELTON","elevation":"5","lat":"39.766666","lon":"-104.866669","distance":"6.83636329713631"},{"id":"51547","name":"CHERRY
+        CREEK DAM","elevation":"5","lat":"39.633331","lon":"-104.833336","distance":"11.098481294440633"},{"id":"54452","name":"KASSLER","elevation":"5","lat":"39.483334","lon":"-105.099998","distance":"18.619150125937622"},{"id":"52790","name":"EVERGREEN","elevation":"7","lat":"39.633331","lon":"-105.316666","distance":"18.833011463889733"},{"id":"50848","name":"BOULDER","elevation":"5","lat":"40.000000","lon":"-105.266670","distance":"23.228446648051584"},{"id":"51401","name":"CASTLE
+        ROCK","elevation":"6","lat":"39.366669","lon":"-104.833336","distance":"27.065311378334716"},{"id":"55116","name":"LONGMONT
+        2 ESE","elevation":"4","lat":"40.166668","lon":"-105.066666","distance":"29.81268098248593"},{"id":"50454","name":"BAILEY","elevation":"7","lat":"39.400002","lon":"-105.483330","distance":"35.19869091210977"},{"id":"53261","name":"GEORGETOWN","elevation":"8","lat":"39.716667","lon":"-105.699997","distance":"37.746829893619925"}]'
+  recorded_at: Mon, 21 Jul 2025 01:29:32 GMT
+recorded_with: VCR 6.3.1

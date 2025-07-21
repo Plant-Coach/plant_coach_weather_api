@@ -7,7 +7,7 @@ RSpec.describe FrostDateService do
     let(:latitude) { 40.7128 }
     let(:longitude) { -74.0060 }
      
-    it 'retrieves the closest weather station to the coordinates' do
+    it 'retrieves the closest weather station to the coordinates', :vcr do
       data = FrostDateService.find_weather_station(39.7392, -104.9903)
       expect(data).to be_an Array
 
@@ -64,7 +64,7 @@ RSpec.describe FrostDateService do
   end
 
   describe '::get_spring_frost_dates' do
-    it 'returns all the spring frost date probabilities for a given location' do
+    it 'returns all the spring frost date probabilities for a given location', :vcr do
       data = FrostDateService.get_spring_frost_dates('54762')
 
       expect(data).to be_an Array
@@ -133,7 +133,7 @@ RSpec.describe FrostDateService do
   end
 
   describe '::get_fall_frost_dates' do
-    it 'returns all the fall frost date probabilities for a given location' do
+    it 'returns all the fall frost date probabilities for a given location', :vcr do
       data = FrostDateService.get_fall_frost_dates('54762')
 
       expect(data).to be_an Array
