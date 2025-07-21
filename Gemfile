@@ -24,8 +24,8 @@ gem 'puma', '~> 6.0'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
+gem 'dotenv-rails'
 gem 'faraday', '>= 1.8.0'
-gem 'figaro'
 gem 'jsonapi-serializer'
 gem 'rspec_junit_formatter'
 

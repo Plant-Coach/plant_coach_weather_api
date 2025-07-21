@@ -1,0 +1,47 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.farmsense.net/v1/frostdates/stations/?lat=40.7128&lon=-74.006
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.13.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Apache/2.4
+      Cache-Control:
+      - no-cache, must-revalidate
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 21 Jul 2025 01:35:09 GMT
+      Access-Control-Allow-Origin:
+      - "*"
+      Set-Cookie:
+      - X-Mapping-mmgahdea=A13A7FC1B037E650ADD62170A8C82D00; path=/
+      Content-Length:
+      - '1284'
+    body:
+      encoding: UTF-8
+      string: '[{"id":"305801","name":"NEW YORK CITY CENTRAL PK","elevation":"130","lat":"40.783333","lon":"-73.966667","distance":"5.290728590462791"},{"id":"305796","name":"NEW
+        YORK AVE V BROOKLYN","elevation":"20","lat":"40.599998","lon":"-73.983330","distance":"7.884384547107155"},{"id":"305811","name":"NEW
+        YORK LA GUARDIA AP","elevation":"11","lat":"40.783333","lon":"-73.883331","distance":"8.061432275731166"},{"id":"286026","name":"NEWARK
+        INTL AP","elevation":"7","lat":"40.716667","lon":"-74.166664","distance":"8.418809256596099"},{"id":"305803","name":"NEW
+        YORK JFK INTL AP","elevation":"11","lat":"40.633331","lon":"-73.766670","distance":"13.691757009121448"},{"id":"282023","name":"CRANFORD","elevation":"75","lat":"40.650002","lon":"-74.300003","distance":"16.005151397656164"},{"id":"282768","name":"ESSEX
+        FELLS SERV BLDG","elevation":"350","lat":"40.833332","lon":"-74.283333","distance":"16.732216750933436"},{"id":"284887","name":"LITTLE
+        FALLS","elevation":"150","lat":"40.883331","lon":"-74.233330","distance":"16.74054604797515"},{"id":"281335","name":"CANOE
+        BROOK","elevation":"180","lat":"40.750000","lon":"-74.349998","distance":"18.194421739318557"},{"id":"287865","name":"SANDY
+        HOOK","elevation":"10","lat":"40.450001","lon":"-73.983330","distance":"18.197722997703384"}]'
+  recorded_at: Mon, 21 Jul 2025 01:35:09 GMT
+recorded_with: VCR 6.3.1

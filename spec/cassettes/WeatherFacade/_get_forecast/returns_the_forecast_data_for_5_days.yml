@@ -1,0 +1,105 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.openweathermap.org/geo/1.0/zip?appid=<OPEN_WEATHER_API_KEY>&zip=80123
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.13.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 21 Jul 2025 01:27:47 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '78'
+      Connection:
+      - keep-alive
+      X-Cache-Key:
+      - "/geo/1.0/zip?zip=80123"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"zip":"80123","name":"Lakewood","lat":39.6206,"lon":-105.0901,"country":"US"}'
+  recorded_at: Mon, 21 Jul 2025 01:27:47 GMT
+- request:
+    method: get
+    uri: https://api.openweathermap.org/data/3.0/onecall?appid=<OPEN_WEATHER_API_KEY>&exclude=minutely,hourly&lat=39.6206&lon=-105.0901&units=imperial
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.13.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 21 Jul 2025 01:27:47 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '5556'
+      Connection:
+      - keep-alive
+      X-Cache-Key:
+      - "/data/3.0/onecall?exclude=minutely%2Chourly&lat=39.62&lon=-105.09&units=imperial"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"lat":39.6206,"lon":-105.0901,"timezone":"America/Denver","timezone_offset":-21600,"current":{"dt":1753061267,"sunrise":1753012156,"sunset":1753064629,"temp":79.95,"feels_like":79.95,"pressure":1008,"humidity":33,"dew_point":48.31,"uvi":0.38,"clouds":99,"visibility":10000,"wind_speed":3,"wind_deg":293,"wind_gust":11.99,"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04d"}]},"daily":[{"dt":1753038000,"sunrise":1753012156,"sunset":1753064629,"moonrise":1752995940,"moonset":1753052460,"moon_phase":0.85,"summary":"Expect
+        a day of partly cloudy with clear spells","temp":{"day":88.5,"min":63.27,"max":88.52,"night":71.62,"eve":79.95,"morn":70.38},"feels_like":{"day":85.35,"night":70.41,"eve":79.95,"morn":69.42},"pressure":1008,"humidity":24,"dew_point":35.55,"wind_speed":15.59,"wind_deg":191,"wind_gust":21.65,"weather":[{"id":802,"main":"Clouds","description":"scattered
+        clouds","icon":"03d"}],"clouds":41,"pop":0,"uvi":10.06},{"dt":1753124400,"sunrise":1753098606,"sunset":1753150986,"moonrise":1753085160,"moonset":1753143120,"moon_phase":0.89,"summary":"Expect
+        a day of partly cloudy with rain","temp":{"day":91.8,"min":60.96,"max":94.78,"night":70.48,"eve":84.36,"morn":66},"feels_like":{"day":87.44,"night":69.67,"eve":81.79,"morn":64.04},"pressure":1007,"humidity":12,"dew_point":31.33,"wind_speed":10.65,"wind_deg":59,"wind_gust":14.92,"weather":[{"id":500,"main":"Rain","description":"light
+        rain","icon":"10d"}],"clouds":86,"pop":0.46,"rain":0.26,"uvi":9.57},{"dt":1753210800,"sunrise":1753185057,"sunset":1753237341,"moonrise":1753175040,"moonset":1753233300,"moon_phase":0.92,"summary":"You
+        can expect partly cloudy in the morning, with rain in the afternoon","temp":{"day":92.23,"min":64.15,"max":92.79,"night":65.5,"eve":75.31,"morn":69.57},"feels_like":{"day":88.07,"night":64.99,"eve":74.84,"morn":68.2},"pressure":1006,"humidity":16,"dew_point":39.31,"wind_speed":15.46,"wind_deg":241,"wind_gust":19.91,"weather":[{"id":502,"main":"Rain","description":"heavy
+        intensity rain","icon":"10d"}],"clouds":30,"pop":1,"rain":7.36,"uvi":10.06},{"dt":1753297200,"sunrise":1753271508,"sunset":1753323694,"moonrise":1753265460,"moonset":1753322700,"moon_phase":0.96,"summary":"You
+        can expect partly cloudy in the morning, with rain in the afternoon","temp":{"day":84.96,"min":65.53,"max":86.2,"night":68.45,"eve":84.49,"morn":66.9},"feels_like":{"day":82.26,"night":68.09,"eve":82.04,"morn":65.88},"pressure":1009,"humidity":24,"dew_point":43.27,"wind_speed":11.14,"wind_deg":8,"wind_gust":14.2,"weather":[{"id":500,"main":"Rain","description":"light
+        rain","icon":"10d"}],"clouds":73,"pop":1,"rain":2.6,"uvi":9.63},{"dt":1753383600,"sunrise":1753357960,"sunset":1753410046,"moonrise":1753356300,"moonset":1753411500,"moon_phase":0,"summary":"Expect
+        a day of partly cloudy with rain","temp":{"day":82.27,"min":63.77,"max":86.97,"night":66.42,"eve":67.24,"morn":63.77},"feels_like":{"day":80.94,"night":65.77,"eve":66.96,"morn":62.71},"pressure":1014,"humidity":33,"dew_point":49.59,"wind_speed":9.26,"wind_deg":244,"wind_gust":13.87,"weather":[{"id":501,"main":"Rain","description":"moderate
+        rain","icon":"10d"}],"clouds":12,"pop":1,"rain":9.39,"uvi":8.4},{"dt":1753470000,"sunrise":1753444412,"sunset":1753496396,"moonrise":1753447080,"moonset":1753499760,"moon_phase":0.03,"summary":"Expect
+        a day of partly cloudy with clear spells","temp":{"day":88.68,"min":63.09,"max":91.04,"night":73.81,"eve":88.38,"morn":63.09},"feels_like":{"day":84.85,"night":72.68,"eve":84.61,"morn":61.63},"pressure":1011,"humidity":15,"dew_point":35.15,"wind_speed":10.4,"wind_deg":125,"wind_gust":13.29,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"clouds":2,"pop":0.79,"uvi":9},{"dt":1753556400,"sunrise":1753530865,"sunset":1753582744,"moonrise":1753537740,"moonset":1753587780,"moon_phase":0.07,"summary":"Expect
+        a day of partly cloudy with clear spells","temp":{"day":91.4,"min":65.75,"max":96.24,"night":80.15,"eve":86.41,"morn":65.75},"feels_like":{"day":87.1,"night":78.91,"eve":83.03,"morn":63.54},"pressure":1010,"humidity":9,"dew_point":24.96,"wind_speed":17.96,"wind_deg":318,"wind_gust":17.16,"weather":[{"id":801,"main":"Clouds","description":"few
+        clouds","icon":"02d"}],"clouds":11,"pop":0,"uvi":9},{"dt":1753642800,"sunrise":1753617319,"sunset":1753669091,"moonrise":1753628160,"moonset":1753675500,"moon_phase":0.1,"summary":"Expect
+        a day of partly cloudy with rain","temp":{"day":93.78,"min":70.16,"max":97.57,"night":73.98,"eve":70.54,"morn":70.16},"feels_like":{"day":89.2,"night":73.18,"eve":70.07,"morn":68.38},"pressure":1010,"humidity":12,"dew_point":33.94,"wind_speed":9.1,"wind_deg":90,"wind_gust":17.83,"weather":[{"id":500,"main":"Rain","description":"light
+        rain","icon":"10d"}],"clouds":0,"pop":1,"rain":1.53,"uvi":9}],"alerts":[{"sender_name":"NWS
+        Denver CO","event":"Special Weather Statement","start":1753058640,"end":1753061400,"description":"At
+        644 PM MDT, Doppler radar was tracking a shower near Tiny Town,\nor 18 miles
+        southwest of Denver, moving northeast at 10 mph.\n\nHAZARD...Wind gusts up
+        to 50 mph.\n\nSOURCE...Radar indicated.\n\nIMPACT...Gusty winds could knock
+        down tree limbs and blow around\nunsecured objects.\n\nLocations impacted
+        include...\nSouthwestern Denver, Lakewood, southwestern Centennial, Highlands\nRanch,
+        Littleton, Englewood, southern Golden, Greenwood Village,\nEvergreen, Sheridan,
+        Morrison, Tiny Town, Red Rocks Park,\nChatfield Reservoir, Indian Hills, Idledale,
+        Aspen Park,\nKittredge, Edgewater and Ken Caryl.","tags":["Other dangers"]}]}'
+  recorded_at: Mon, 21 Jul 2025 01:27:47 GMT
+recorded_with: VCR 6.3.1

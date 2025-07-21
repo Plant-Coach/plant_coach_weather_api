@@ -1,0 +1,58 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.openweathermap.org/data/3.0/onecall?appid=<OPEN_WEATHER_API_KEY>&exclude=minutely,hourly&lat=39.6118&lon=-104.9506&units=imperial
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.13.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 21 Jul 2025 01:29:45 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '4783'
+      Connection:
+      - keep-alive
+      X-Cache-Key:
+      - "/data/3.0/onecall?exclude=minutely%2Chourly&lat=39.61&lon=-104.95&units=imperial"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"lat":39.6118,"lon":-104.9506,"timezone":"America/Denver","timezone_offset":-21600,"current":{"dt":1753061385,"sunrise":1753012124,"sunset":1753064594,"temp":81.63,"feels_like":80.31,"pressure":1007,"humidity":31,"dew_point":48.09,"uvi":0.3,"clouds":40,"visibility":10000,"wind_speed":14.97,"wind_deg":200,"weather":[{"id":802,"main":"Clouds","description":"scattered
+        clouds","icon":"03d"}]},"daily":[{"dt":1753038000,"sunrise":1753012124,"sunset":1753064594,"moonrise":1752995880,"moonset":1753052400,"moon_phase":0.85,"summary":"Expect
+        a day of partly cloudy with clear spells","temp":{"day":89.37,"min":64.04,"max":89.37,"night":72.88,"eve":81.63,"morn":71.2},"feels_like":{"day":86.07,"night":71.69,"eve":80.31,"morn":70.32},"pressure":1007,"humidity":23,"dew_point":34.56,"wind_speed":16.33,"wind_deg":219,"wind_gust":21.59,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"clouds":0,"pop":0,"uvi":10.58},{"dt":1753124400,"sunrise":1753098574,"sunset":1753150951,"moonrise":1753085100,"moonset":1753143060,"moon_phase":0.89,"summary":"There
+        will be partly cloudy today","temp":{"day":93.18,"min":61.68,"max":96.35,"night":72.07,"eve":85.68,"morn":66.56},"feels_like":{"day":88.66,"night":71.19,"eve":82.69,"morn":64.85},"pressure":1006,"humidity":12,"dew_point":33.96,"wind_speed":10.45,"wind_deg":196,"wind_gust":16.93,"weather":[{"id":803,"main":"Clouds","description":"broken
+        clouds","icon":"04d"}],"clouds":75,"pop":0.01,"uvi":10.59},{"dt":1753210800,"sunrise":1753185025,"sunset":1753237306,"moonrise":1753174980,"moonset":1753233240,"moon_phase":0.92,"summary":"Expect
+        a day of partly cloudy with rain","temp":{"day":93.52,"min":65.39,"max":95,"night":66.96,"eve":79.57,"morn":70.29},"feels_like":{"day":89.31,"night":66.51,"eve":79.57,"morn":68.99},"pressure":1005,"humidity":16,"dew_point":40.15,"wind_speed":23.26,"wind_deg":246,"wind_gust":28.95,"weather":[{"id":502,"main":"Rain","description":"heavy
+        intensity rain","icon":"10d"}],"clouds":5,"pop":1,"rain":6.93,"uvi":10.71},{"dt":1753297200,"sunrise":1753271476,"sunset":1753323659,"moonrise":1753265460,"moonset":1753322640,"moon_phase":0.96,"summary":"You
+        can expect partly cloudy in the morning, with rain in the afternoon","temp":{"day":87.87,"min":66.16,"max":87.87,"night":70.93,"eve":85.37,"morn":68.25},"feels_like":{"day":84.49,"night":70.45,"eve":82.85,"morn":67.32},"pressure":1008,"humidity":21,"dew_point":43.39,"wind_speed":14.2,"wind_deg":19,"wind_gust":21.79,"weather":[{"id":500,"main":"Rain","description":"light
+        rain","icon":"10d"}],"clouds":69,"pop":0.8,"rain":0.32,"uvi":9.38},{"dt":1753383600,"sunrise":1753357928,"sunset":1753410011,"moonrise":1753356300,"moonset":1753411440,"moon_phase":0,"summary":"You
+        can expect partly cloudy in the morning, with rain in the afternoon","temp":{"day":82.49,"min":64.62,"max":91.2,"night":68.38,"eve":64.92,"morn":64.62},"feels_like":{"day":81.01,"night":67.87,"eve":64.78,"morn":63.73},"pressure":1014,"humidity":32,"dew_point":49.62,"wind_speed":7.49,"wind_deg":242,"wind_gust":12.17,"weather":[{"id":501,"main":"Rain","description":"moderate
+        rain","icon":"10d"}],"clouds":13,"pop":1,"rain":11.11,"uvi":10.86},{"dt":1753470000,"sunrise":1753444380,"sunset":1753496361,"moonrise":1753447080,"moonset":1753499760,"moon_phase":0.03,"summary":"Expect
+        a day of partly cloudy with clear spells","temp":{"day":89.51,"min":63.37,"max":94.35,"night":73.49,"eve":87.06,"morn":63.59},"feels_like":{"day":85.55,"night":72.41,"eve":83.64,"morn":62.42},"pressure":1011,"humidity":15,"dew_point":36.61,"wind_speed":15.39,"wind_deg":96,"wind_gust":20.71,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"clouds":1,"pop":0.8,"uvi":11},{"dt":1753556400,"sunrise":1753530833,"sunset":1753582709,"moonrise":1753537740,"moonset":1753587720,"moon_phase":0.07,"summary":"Expect
+        a day of partly cloudy with rain","temp":{"day":93.38,"min":65.7,"max":97.38,"night":79.61,"eve":92.95,"morn":65.7},"feels_like":{"day":88.77,"night":79.61,"eve":88.43,"morn":63.9},"pressure":1010,"humidity":9,"dew_point":26.87,"wind_speed":15.61,"wind_deg":315,"wind_gust":16.84,"weather":[{"id":500,"main":"Rain","description":"light
+        rain","icon":"10d"}],"clouds":7,"pop":0.31,"rain":0.21,"uvi":11},{"dt":1753642800,"sunrise":1753617286,"sunset":1753669056,"moonrise":1753628160,"moonset":1753675440,"moon_phase":0.1,"summary":"Expect
+        a day of partly cloudy with rain","temp":{"day":94.71,"min":70.54,"max":99.37,"night":75.9,"eve":70.54,"morn":70.54},"feels_like":{"day":90.05,"night":75.16,"eve":70.07,"morn":68.79},"pressure":1009,"humidity":12,"dew_point":34.72,"wind_speed":9.75,"wind_deg":296,"wind_gust":22.35,"weather":[{"id":500,"main":"Rain","description":"light
+        rain","icon":"10d"}],"clouds":1,"pop":0.97,"rain":1.71,"uvi":11}]}'
+  recorded_at: Mon, 21 Jul 2025 01:29:45 GMT
+recorded_with: VCR 6.3.1

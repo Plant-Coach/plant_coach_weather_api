@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe WeatherService do
   describe '::location_search' do
-    it 'returns the location data based on a string search' do
+    it 'returns the location data based on a string search', :vcr do
       data = WeatherService.location_search('80121')
 
       expect(data).to have_key(:lat)
@@ -20,7 +20,7 @@ RSpec.describe WeatherService do
   end
 
   describe '::get_forecast' do
-    it 'returns the forecast' do
+    it 'returns the forecast', :vcr do
       lat = 39.6118
       lon = -104.9506
       data = WeatherService.get_forecast(lat, lon)

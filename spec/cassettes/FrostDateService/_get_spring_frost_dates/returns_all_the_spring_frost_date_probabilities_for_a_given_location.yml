@@ -1,0 +1,39 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.farmsense.net/v1/frostdates/probabilities/?season=1&station=54762
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.13.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Apache/2.4
+      Cache-Control:
+      - no-cache, must-revalidate
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 21 Jul 2025 01:29:33 GMT
+      Access-Control-Allow-Origin:
+      - "*"
+      Set-Cookie:
+      - X-Mapping-mmgahdea=39A656070B9B30B3E2A79DA069D6DC33; path=/
+      Content-Length:
+      - '1201'
+    body:
+      encoding: UTF-8
+      string: '[{"season_id":"1","temperature_threshold":"36","prob_90":"0505","prob_80":"0510","prob_70":"0514","prob_60":"0517","prob_50":"0520","prob_40":"0523","prob_30":"0526","prob_20":"0530","prob_10":"0604"},{"season_id":"1","temperature_threshold":"32","prob_90":"0424","prob_80":"0429","prob_70":"0503","prob_60":"0506","prob_50":"0509","prob_40":"0512","prob_30":"0515","prob_20":"0519","prob_10":"0524"},{"season_id":"1","temperature_threshold":"28","prob_90":"0411","prob_80":"0417","prob_70":"0421","prob_60":"0425","prob_50":"0429","prob_40":"0502","prob_30":"0506","prob_20":"0510","prob_10":"0517"},{"season_id":"1","temperature_threshold":"24","prob_90":"0329","prob_80":"0404","prob_70":"0408","prob_60":"0412","prob_50":"0415","prob_40":"0419","prob_30":"0422","prob_20":"0426","prob_10":"0502"},{"season_id":"1","temperature_threshold":"20","prob_90":"0316","prob_80":"0323","prob_70":"0328","prob_60":"0401","prob_50":"0405","prob_40":"0409","prob_30":"0414","prob_20":"0419","prob_10":"0426"},{"season_id":"1","temperature_threshold":"16","prob_90":"0305","prob_80":"0312","prob_70":"0318","prob_60":"0322","prob_50":"0327","prob_40":"0331","prob_30":"0405","prob_20":"0410","prob_10":"0418"}]'
+  recorded_at: Mon, 21 Jul 2025 01:29:33 GMT
+recorded_with: VCR 6.3.1
