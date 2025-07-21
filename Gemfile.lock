@@ -97,6 +97,10 @@ GEM
     date (3.4.1)
     diff-lcs (1.6.2)
     docile (1.4.1)
+    dotenv (3.1.8)
+    dotenv-rails (3.1.8)
+      dotenv (= 3.1.8)
+      railties (>= 6.1)
     drb (2.2.3)
     erb (5.0.1)
     erubi (1.13.1)
@@ -114,8 +118,6 @@ GEM
     ffi (1.17.2-x86_64-darwin)
     ffi (1.17.2-x86_64-linux-gnu)
     ffi (1.17.2-x86_64-linux-musl)
-    figaro (1.2.0)
-      thor (>= 0.14.0, < 2)
     globalid (1.2.1)
       activesupport (>= 6.1)
     hashdiff (1.2.0)
@@ -328,8 +330,8 @@ DEPENDENCIES
   brakeman
   bundler-audit
   byebug
+  dotenv-rails
   faraday (>= 1.8.0)
-  figaro
   jsonapi-serializer
   listen
   mutex_m
