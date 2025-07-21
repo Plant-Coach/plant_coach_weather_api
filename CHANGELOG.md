@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.7](https://github.com/Plant-Coach/plant_coach_weather_api/compare/v0.4.6...v0.4.7) (2025-07-21)
+
+
+### Bug Fixes
+
+* temp fix for the farmsense api ([#146](https://github.com/Plant-Coach/plant_coach_weather_api/issues/146)) ([f0354e2](https://github.com/Plant-Coach/plant_coach_weather_api/commit/f0354e2545fd083a7ffd7d99dd7edbbbce0a8c2c))
+
 ## [0.4.6](https://github.com/Plant-Coach/plant_coach_weather_api/compare/v0.4.5...v0.4.6) (2025-07-21)
 
 
