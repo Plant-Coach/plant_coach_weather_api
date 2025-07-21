@@ -6,7 +6,7 @@ class FrostDateService
       conn = Faraday.new('https://api.farmsense.net') do |f|
         f.options.timeout = 30
         f.options.open_timeout = 10
-        f.ssl.verify = Rails.env.production?
+        f.ssl.verify = false
         f.ssl.ca_file = nil
       end
       response = conn.get("/v1/frostdates/stations/?lat=#{lat}&lon=#{long}")
@@ -38,7 +38,7 @@ class FrostDateService
       conn = Faraday.new('https://api.farmsense.net') do |f|
         f.options.timeout = 30
         f.options.open_timeout = 10
-        f.ssl.verify = Rails.env.production?
+        f.ssl.verify = false
         f.ssl.ca_file = nil
       end
       response = conn.get("/v1/frostdates/probabilities/?station=#{weather_station_id}&season=1")
@@ -70,7 +70,7 @@ class FrostDateService
       conn = Faraday.new('https://api.farmsense.net') do |f|
         f.options.timeout = 30
         f.options.open_timeout = 10
-        f.ssl.verify = Rails.env.production?
+        f.ssl.verify = false
         f.ssl.ca_file = nil
       end
       response = conn.get("/v1/frostdates/probabilities/?station=#{weather_station_id}&season=2")
