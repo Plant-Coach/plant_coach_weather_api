@@ -50,7 +50,7 @@ RSpec.describe FrostDateService do
       end
     end
     context 'when a ParserError error occurs' do
-      it 'returns nil and logs the error' do
+      it 'returns nil and logs the error', :vcr do
         allow(JSON).to receive(:parse).and_raise(JSON::ParserError.new('ParserError'))
         allow(Rails.logger).to receive(:error)
 
@@ -119,7 +119,7 @@ RSpec.describe FrostDateService do
       end
     end
     context 'when a ParserError error occurs' do
-      it 'returns nil and logs the error' do
+      it 'returns nil and logs the error', :vcr do
         allow(JSON).to receive(:parse).and_raise(JSON::ParserError.new('ParserError'))
         allow(Rails.logger).to receive(:error)
 
@@ -188,7 +188,7 @@ RSpec.describe FrostDateService do
       end
     end
     context 'when a ParserError error occurs' do
-      it 'returns nil and logs the error' do
+      it 'returns nil and logs the error', :vcr do
         allow(JSON).to receive(:parse).and_raise(JSON::ParserError.new('ParserError'))
         allow(Rails.logger).to receive(:error)
 

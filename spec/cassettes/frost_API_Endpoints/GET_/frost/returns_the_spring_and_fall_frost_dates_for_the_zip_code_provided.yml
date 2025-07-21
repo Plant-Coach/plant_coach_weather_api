@@ -1,0 +1,153 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.openweathermap.org/geo/1.0/zip?appid=<OPEN_WEATHER_API_KEY>&zip=80123
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.13.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 21 Jul 2025 01:35:07 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '78'
+      Connection:
+      - keep-alive
+      X-Cache-Key:
+      - "/geo/1.0/zip?zip=80123"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"zip":"80123","name":"Lakewood","lat":39.6206,"lon":-105.0901,"country":"US"}'
+  recorded_at: Mon, 21 Jul 2025 01:35:07 GMT
+- request:
+    method: get
+    uri: https://api.farmsense.net/v1/frostdates/stations/?lat=39.6206&lon=-105.0901
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.13.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Apache/2.4
+      Cache-Control:
+      - no-cache, must-revalidate
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 21 Jul 2025 01:35:07 GMT
+      Access-Control-Allow-Origin:
+      - "*"
+      Set-Cookie:
+      - X-Mapping-mmgahdea=39A656070B9B30B3E2A79DA069D6DC33; path=/
+      Content-Length:
+      - '1205'
+    body:
+      encoding: UTF-8
+      string: '[{"id":"54762","name":"LAKEWOOD","elevation":"5","lat":"39.750000","lon":"-105.116669","distance":"9.05215567183104"},{"id":"54452","name":"KASSLER","elevation":"5","lat":"39.483334","lon":"-105.099998","distance":"9.49942739337911"},{"id":"52790","name":"EVERGREEN","elevation":"7","lat":"39.633331","lon":"-105.316666","distance":"12.089838685681414"},{"id":"51547","name":"CHERRY
+        CREEK DAM","elevation":"5","lat":"39.633331","lon":"-104.833336","distance":"13.693235189750121"},{"id":"52220","name":"DENVER
+        STAPELTON","elevation":"5","lat":"39.766666","lon":"-104.866669","distance":"15.588072998310206"},{"id":"51401","name":"CASTLE
+        ROCK","elevation":"6","lat":"39.366669","lon":"-104.833336","distance":"22.255622113240417"},{"id":"50454","name":"BAILEY","elevation":"7","lat":"39.400002","lon":"-105.483330","distance":"25.918788466880883"},{"id":"50848","name":"BOULDER","elevation":"5","lat":"40.000000","lon":"-105.266670","distance":"27.840512319846578"},{"id":"51528","name":"CHEESMAN","elevation":"6","lat":"39.216667","lon":"-105.283333","distance":"29.75573715920462"},{"id":"51186","name":"CABIN
+        CREEK","elevation":"10","lat":"39.650002","lon":"-105.699997","distance":"32.51818546622463"}]'
+  recorded_at: Mon, 21 Jul 2025 01:35:07 GMT
+- request:
+    method: get
+    uri: https://api.farmsense.net/v1/frostdates/probabilities/?season=1&station=54762
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.13.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Apache/2.4
+      Cache-Control:
+      - no-cache, must-revalidate
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 21 Jul 2025 01:35:08 GMT
+      Access-Control-Allow-Origin:
+      - "*"
+      Set-Cookie:
+      - X-Mapping-mmgahdea=9D69D05B330618FDF5FE31B9D3E6AA4B; path=/
+      Content-Length:
+      - '1201'
+    body:
+      encoding: UTF-8
+      string: '[{"season_id":"1","temperature_threshold":"36","prob_90":"0505","prob_80":"0510","prob_70":"0514","prob_60":"0517","prob_50":"0520","prob_40":"0523","prob_30":"0526","prob_20":"0530","prob_10":"0604"},{"season_id":"1","temperature_threshold":"32","prob_90":"0424","prob_80":"0429","prob_70":"0503","prob_60":"0506","prob_50":"0509","prob_40":"0512","prob_30":"0515","prob_20":"0519","prob_10":"0524"},{"season_id":"1","temperature_threshold":"28","prob_90":"0411","prob_80":"0417","prob_70":"0421","prob_60":"0425","prob_50":"0429","prob_40":"0502","prob_30":"0506","prob_20":"0510","prob_10":"0517"},{"season_id":"1","temperature_threshold":"24","prob_90":"0329","prob_80":"0404","prob_70":"0408","prob_60":"0412","prob_50":"0415","prob_40":"0419","prob_30":"0422","prob_20":"0426","prob_10":"0502"},{"season_id":"1","temperature_threshold":"20","prob_90":"0316","prob_80":"0323","prob_70":"0328","prob_60":"0401","prob_50":"0405","prob_40":"0409","prob_30":"0414","prob_20":"0419","prob_10":"0426"},{"season_id":"1","temperature_threshold":"16","prob_90":"0305","prob_80":"0312","prob_70":"0318","prob_60":"0322","prob_50":"0327","prob_40":"0331","prob_30":"0405","prob_20":"0410","prob_10":"0418"}]'
+  recorded_at: Mon, 21 Jul 2025 01:35:08 GMT
+- request:
+    method: get
+    uri: https://api.farmsense.net/v1/frostdates/probabilities/?season=2&station=54762
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.13.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Apache/2.4
+      Cache-Control:
+      - no-cache, must-revalidate
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 21 Jul 2025 01:35:08 GMT
+      Access-Control-Allow-Origin:
+      - "*"
+      Set-Cookie:
+      - X-Mapping-mmgahdea=A13A7FC1B037E650ADD62170A8C82D00; path=/
+      Content-Length:
+      - '1201'
+    body:
+      encoding: UTF-8
+      string: '[{"season_id":"2","temperature_threshold":"36","prob_90":"1006","prob_80":"1002","prob_70":"0929","prob_60":"0927","prob_50":"0925","prob_40":"0922","prob_30":"0920","prob_20":"0917","prob_10":"0913"},{"season_id":"2","temperature_threshold":"32","prob_90":"1014","prob_80":"1010","prob_70":"1006","prob_60":"1004","prob_50":"1001","prob_40":"0928","prob_30":"0926","prob_20":"0922","prob_10":"0918"},{"season_id":"2","temperature_threshold":"28","prob_90":"1024","prob_80":"1019","prob_70":"1015","prob_60":"1012","prob_50":"1009","prob_40":"1006","prob_30":"1003","prob_20":"0929","prob_10":"0924"},{"season_id":"2","temperature_threshold":"24","prob_90":"1108","prob_80":"1102","prob_70":"1028","prob_60":"1024","prob_50":"1020","prob_40":"1016","prob_30":"1012","prob_20":"1007","prob_10":"0930"},{"season_id":"2","temperature_threshold":"20","prob_90":"1118","prob_80":"1112","prob_70":"1107","prob_60":"1104","prob_50":"1031","prob_40":"1028","prob_30":"1024","prob_20":"1019","prob_10":"1013"},{"season_id":"2","temperature_threshold":"16","prob_90":"1126","prob_80":"1120","prob_70":"1115","prob_60":"1111","prob_50":"1108","prob_40":"1104","prob_30":"1031","prob_20":"1026","prob_10":"1020"}]'
+  recorded_at: Mon, 21 Jul 2025 01:35:08 GMT
+recorded_with: VCR 6.3.1
